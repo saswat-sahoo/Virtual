@@ -7,9 +7,9 @@ let mesh;
 
 let controls = {};
 let player = {
-    height: .01,
+    height: 5,
     turnSpeed: .01,
-    speed: 1,
+    speed: 0.5,
     jumpHeight: .2,
     gravity: .01,
     velocity: 0,
@@ -35,7 +35,7 @@ function init(){
     
 }
 function setLight(){
-    light1=new THREE.AmbientLight(new THREE.Color('white'),0.5);
+    light1=new THREE.AmbientLight(new THREE.Color('white'),0.7);
     light1.castShadow=true;
     var light = new THREE.DirectionalLight( 0xffffff, 1.0,5000 );
 		scene.add( light );
@@ -73,7 +73,7 @@ function loadGltf(){
     groundTexture.encoding = THREE.sRGBEncoding;
     var groundMaterial = new THREE.MeshStandardMaterial( { map: groundTexture } );
     var plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 10000, 10000 ), groundMaterial );
-    plane.position.y = -4;
+    plane.position.y = 0;
     plane.rotation.x = - Math.PI / 2;
     plane.receiveShadow = true;
     scene.add( plane );
