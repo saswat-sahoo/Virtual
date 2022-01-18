@@ -1,6 +1,6 @@
 
 const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,100000);
+const camera=new THREE.PerspectiveCamera(50,window.innerWidth/window.innerHeight,1,100000);
 const renderer= new THREE.WebGLRenderer({antialias: true});
 const textureLoader=new THREE.TextureLoader();
 const controls=new THREE.PointerLockControls(camera,renderer.domElement);
@@ -18,7 +18,7 @@ let player = {
   playerJumps: false
 };
   
-camera.position.set(100, player.height, -100);
+camera.position.set(191, player.height, 0);
 camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 let btn1=document.querySelector("#button1");
@@ -147,6 +147,7 @@ function animate(){
   processKeyboard(delta);
   requestAnimationFrame(animate);
   renderer.render(scene,camera); 
+  //console.log(camera.position);
 }
 
 
