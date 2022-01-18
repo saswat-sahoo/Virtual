@@ -8,10 +8,10 @@ const clock=new THREE.Clock();
 let mesh;
 
 let player = {
-  height: 5,
+  height: 3.5,
   turnSpeed: .01,
   speed: 25,
-  jumpHeight: .2,
+  jumpHeight: .01,
   gravity: .01,
   velocity: 0,
   
@@ -114,12 +114,12 @@ function setLight(){
 
 function loadGltf(){
   let loader=new THREE.GLTFLoader();
-  loader.load('./assets/enviornment.gltf',(gltf)=>{
+  loader.load('./assets/Main.gltf',(gltf)=>{
       mesh=gltf.scene;
-      mesh.scale.set(0.4,0.4,0.4);
+      mesh.scale.set(20,20,20);
       scene.add(mesh);
       mesh.position.x=0;
-      mesh.position.y=-2;
+      mesh.position.y=0.2;
       mesh.position.z=0;
   })
   
